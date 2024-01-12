@@ -1,12 +1,6 @@
-# Slint Rust Template
+# Tax Calculator app
 
-A template for a Rust application that's using [Slint](https://slint.rs) for the user interface.
-
-## About
-
-This template helps you get started developing a Rust application with Slint as toolkit
-for the user interface. It demonstrates the integration between the `.slint` UI markup and
-Rust code, how to trigger react to callbacks, get and set properties and use basic widgets.
+A tax calculator desktop app made in Rust that's using [Slint](https://slint.rs) for the user interface.
 
 ## Usage
 
@@ -16,10 +10,10 @@ Rust code, how to trigger react to callbacks, get and set properties and use bas
     ```
     cargo install cargo-generate
     ```
-3. Set up a sample project with this template
+3. Clone this repo
     ```
-    cargo generate --git https://github.com/slint-ui/slint-rust-template --name my-project
-    cd my-project
+    git clone https://github.com/NNKTV28/Tax-calculation-app.git
+    cd Tax-calculation-app-main
     ```
 3. Build with cargo
     ```
@@ -29,12 +23,3 @@ Rust code, how to trigger react to callbacks, get and set properties and use bas
      ```
      cargo run
      ```
-
-We recommend using an IDE for development, along with our [LSP-based IDE integration for `.slint` files](https://github.com/slint-ui/slint/blob/master/tools/lsp/README.md). You can also load this project directly in [Visual Studio Code](https://code.visualstudio.com) and install our [Slint extension](https://marketplace.visualstudio.com/items?itemName=Slint.slint).
-
-## Next Steps
-
-We hope that this template helps you get started and you enjoy exploring making user interfaces with Slint. To learn more
-about the Slint APIs and the `.slint` markup language check out our [online documentation](https://slint.dev/docs).
-
-Don't forget to edit this README to replace it by yours
