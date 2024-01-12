@@ -1,0 +1,84 @@
+import { Button, VerticalBox, GridBox, LineEdit } from "std-widgets.slint";
+
+export component AppWindow inherits Window {
+    in property <string> results: "";
+    in-out property <bool> openCurtain;
+    callback divide-income(string);
+
+    background: #313e50;
+    GridBox {
+        padding: 50px;
+        spacing: 25px;
+        Row {
+            Text {
+                text: "Eznter total income";
+                horizontal-alignment: center;
+                font-size: 24px;
+                font-weight: 900;
+            }
+        }
+        Row {
+            income := LineEdit {
+                horizontal-alignment: center;
+                placeholder-text: "Enter your number";
+                font-size: 16px;
+                height: 35px;
+            }
+        }
+        Row {
+            Button {
+                text: "Calculate";
+                primary: true;
+                height: 35px;
+                clicked => {
+                    root.openCurtain = !root.openCurtain;
+                    divide-income(income.text);
+                }
+            }
+        }
+        Row {
+            VerticalBox {
+                Rectangle {
+                    height: 100px;
+                    background: #f2f2f2;
+                    Text {
+                        color: black;
+                        font-size: 16px;
+                        font-weight: 500;
+                        text: root.results;
+                    }
+
+                    // left rectangle
+                    Rectangle {
+                        background: #333333;
+                        x: 0;
+                        width: openCurtain ? 0px : parent.width / 2;
+                        height: parent.height;
+                        animate width {
+                            duration: 250ms; 
+                            easing: ease-in;
+                        }
+                    }
+
+                    // right rectangle
+                    Rectangle {
+                        background: #333333;
+                        x: openCurtain ? parent.width : parent.width / 2;
+                        width: openCurtain ? 0px : parent.width / 2;
+                        height: parent.height;
+                        animate width {
+                            duration: 250ms; 
+                            easing: ease-in;
+                        }
+                        animate x {
+                            duration: 250ms; 
+                            easing: ease-in;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
