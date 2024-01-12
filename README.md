@@ -13,7 +13,7 @@ A tax calculator desktop app made in Rust that's using [Slint](https://slint.rs)
 3. Clone this repo
     ```
     git clone https://github.com/NNKTV28/Tax-calculation-app.git
-    cd Tax-calculation-app-main
+    cd Tax-calculation-app
     ```
 3. Build with cargo
     ```
